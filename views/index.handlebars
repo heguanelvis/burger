@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container font-color font-style">
     
-    <h1 class="text-center">Eat-Da-Burger!</h1>
+    <h1 class="text-center"><i class="fas fa-utensils fa-spin"></i>  Eat-Da-Burger!</h1>
     
     <br>
-    <hr>
+    <hr class="style12">
 
     <div class="row d-lg-flex justify-content-around">
         <div class="col-lg-6">
-            <h3 class="text-center">Burgers You Can Order</h3>
+            <h3 class="text-center order-color">Burgers You Can Order</h3>
             {{#each burgers}} {{#unless this.devoured}}
             <div class="text-center">
                 <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
@@ -18,7 +18,7 @@
         </div>
 
         <div class="col-lg-6">
-            <h3 class="text-center">Burgers Devoured</h3>
+            <h3 class="text-center eaten-color">Burgers Devoured</h3>
             <div class="d-block">
             {{#each burgers}} {{#if this.devoured}}
             <div class='text-center'>
@@ -32,15 +32,16 @@
     </div>
 
     <br>
-    <hr>
+    <hr class="style12">
 
-    <h2>Add A Burger Option</h2>
+    <h2 class="add-color text-center">Add A Burger Option</h2>
 
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <form action="/burgers" method="POST">
-                <input type="text" id="name" name="burger_name">
-                <button type="submit" class="add-burger-button">Add Burger</button>
+                <input type="text" class="form-control btn-margin" id="name" name="burger_name">
+                <br>
+                <button type="submit" class="add-burger-button btn btn-warning btn-margin">Add Burger</button>
             </form>
         </div>
     </div>
