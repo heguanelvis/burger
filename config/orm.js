@@ -28,10 +28,10 @@ function objToSql(ob) {
 
 // Orm
 var orm = {
-    
-    selectAll: (table, cb) => {     
+
+    selectAll: (table, cb) => {
         var queryString = "SELECT * FROM " + table + ";";
-        
+
         connection.query(queryString, (error, result) => {
             if (error) {
                 throw error;
@@ -42,7 +42,7 @@ var orm = {
 
     insertOne: (table, columns, values, cb) => {
         var queryString = "INSERT INTO " + table;
-        
+
         queryString += " (";
         queryString += columns.toString();
         queryString += ") ";
